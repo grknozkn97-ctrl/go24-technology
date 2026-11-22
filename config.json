@@ -1,9 +1,16 @@
 {
   "timezone": "Europe/Podgorica",
   "api_version": "v26.0",
-  "require_approval": false,
-  "feed_times": ["12:30"],
-  "story_times": ["08:30", "11:30", "15:30", "19:30"],
+  "require_approval": true,
+  "feed_times": [
+    "12:30"
+  ],
+  "story_times": [
+    "08:30",
+    "11:30",
+    "15:30",
+    "19:30"
+  ],
   "max_late_minutes": 360,
   "max_attempts": 3,
   "quota_stop": 40,

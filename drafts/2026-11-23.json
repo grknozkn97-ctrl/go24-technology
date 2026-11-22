@@ -1,0 +1,81 @@
+{
+  "date": "2026-11-23",
+  "items": [
+    {
+      "id": "gta6",
+      "date": "2026-11-23",
+      "category": {
+        "me": "Gaming",
+        "en": "Gaming"
+      },
+      "title_me": "GTA VI za jedan dan zaradio 3,79 milijardi dolara",
+      "title_en": "GTA VI earned $3.79 billion in a single day",
+      "points_me": [
+        "Rockstar Games kaže da je prodaja prvog dana dostigla 3,79 milijardi dolara, rekord za zabavnu industriju u bilo kom mediju.",
+        "Prije izlaska prodato je 32,5 miliona primjeraka.",
+        "Igra ima ocjenu 99 na Metacriticu.",
+        "Dostupna je na PlayStationu 5 i Xboxu Series X|S."
+      ],
+      "points_en": [
+        "Rockstar Games says day-one retail sales reached $3.79 billion, a record for entertainment in any medium.",
+        "32.5 million copies were sold before launch.",
+        "The game holds a score of 99 on Metacritic.",
+        "Out now on PlayStation 5 and Xbox Series X|S."
+      ],
+      "story_me": "Rekord za zabavnu industriju u bilo kom mediju.",
+      "story_en": "A record for entertainment in any medium.",
+      "source": "Take-Two Interactive",
+      "caption_me": "Grand Theft Auto VI je prvog dana prodaje zaradio 3,79 milijardi dolara, objavio je Rockstar Games. Prije izlaska prodato je 32,5 miliona primjeraka, a igra ima ocjenu 99 na Metacriticu.",
+      "caption_en": "Grand Theft Auto VI made $3.79 billion in day-one retail sales, Rockstar Games says. It sold 32.5 million copies before launch and holds a 99 on Metacritic.",
+      "hashtags": [
+        "#GTA6",
+        "#gaming",
+        "#tehnologija",
+        "#tech",
+        "#go24"
+      ],
+      "image": {
+        "page": "https://www.rockstargames.com/VI",
+        "credit": "Rockstar Games"
+      }
+    },
+    {
+      "id": "todo",
+      "date": "2026-11-23",
+      "category": {
+        "me": "Aplikacije",
+        "en": "Apps"
+      },
+      "title_me": "Microsoft gasi aplikaciju To Do 30. juna 2027.",
+      "title_en": "Microsoft is shutting down To Do on June 30, 2027",
+      "points_me": [
+        "Aplikacije se gase na webu, Windowsu, Macu, iOS-u i Androidu.",
+        "Postojeći zadaci se neće automatski prebaciti u Planner.",
+        "Za lične Microsoft naloge nema zamjene.",
+        "Microsoft obećava opciju izvoza podataka prije gašenja."
+      ],
+      "points_en": [
+        "The apps retire on the web, Windows, Mac, iOS and Android.",
+        "Existing tasks will not move to Planner automatically.",
+        "There is no replacement for personal Microsoft accounts.",
+        "Microsoft promises a data export option before the shutdown."
+      ],
+      "story_me": "Zadaci se neće automatski prebaciti. Za lične naloge nema zamjene.",
+      "story_en": "Tasks won't move automatically. No replacement for personal accounts.",
+      "source": "Microsoft Support",
+      "caption_me": "Microsoft gasi aplikacije To Do 30. juna 2027. na svim platformama. Postojeći zadaci se neće automatski prebaciti u Planner, a za lične naloge nema zamjene.",
+      "caption_en": "Microsoft will retire the To Do apps on June 30, 2027 on every platform. Existing tasks won't move to Planner automatically, and there's no replacement for personal accounts.",
+      "hashtags": [
+        "#Microsoft",
+        "#apps",
+        "#tehnologija",
+        "#tech",
+        "#go24"
+      ],
+      "image": {
+        "url": "https://images.pexels.com/photos/416322/pexels-photo-416322.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        "credit": "Pexels"
+      }
+    }
+  ]
+}

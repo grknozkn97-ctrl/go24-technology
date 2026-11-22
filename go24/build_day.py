@@ -20,6 +20,7 @@ from pathlib import Path
 from zoneinfo import ZoneInfo
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+from images import attach_image  # noqa: E402
 from render import ROOT, render_item  # noqa: E402
 
 CFG = json.loads((ROOT / "config.json").read_text(encoding="utf-8"))
@@ -45,6 +46,30 @@ def caption(item: dict) -> str:
     return text
 
 
+def preview(files: dict, out: Path):
+    """Contact sheet of everything rendered today (for a quick visual check)."""
+    from PIL import Image
+
+    rows = []
+    for f in files.values():
+        ims = [Image.open(ROOT / p) for p in f["carousel"]] + [Image.open(ROOT / f["story"])]
+        ims = [im.resize((int(im.width * 450 / im.height), 450)) for im in ims]
+        row = Image.new("RGB", (sum(i.width for i in ims) + 20 * (len(ims) + 1), 490), (24, 24, 28))
+        x = 20
+        for im in ims:
+            row.paste(im, (x, 20))
+            x += im.width + 20
+        rows.append(row)
+    if not rows:
+        return
+    sheet = Image.new("RGB", (max(r.width for r in rows), sum(r.height for r in rows)), (24, 24, 28))
+    y = 0
+    for r in rows:
+        sheet.paste(r, (0, y))
+        y += r.height
+    sheet.save(out, "JPEG", quality=80)
+
+
 def main(draft_path: str):
     draft = json.loads(Path(draft_path).read_text(encoding="utf-8"))
     day = draft["date"]
@@ -56,7 +81,14 @@ def main(draft_path: str):
                 raise SystemExit(f"{it['id']}: missing {k}")
 
     outdir = ROOT / "media" / day
-    files = {iid: render_item(it, outdir) for iid, it in items.items()}
+    files = {}
+    for iid, it in items.items():
+        src = outdir / "src" / f"{iid}.jpg"
+        if src.exists():  # photo already downloaded on an earlier build
+            it.setdefault("image", {})["path"] = str(src.relative_to(ROOT))
+        attach_image(it, save_dir=outdir / "src")
+        files[iid] = render_item(it, outdir)
+    preview(files, outdir / "preview.jpg")
 
     ids = list(items)
     feed = draft.get("feed") or [{"item": ids[i], "at": t} for i, t in enumerate(CFG["feed_times"]) if i < len(ids)]

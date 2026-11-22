@@ -1,0 +1,48 @@
+{
+  "date": "2026-11-23",
+  "posts": [
+    {
+      "id": "2026-11-23-story-gta6-0830",
+      "type": "story",
+      "at": "2026-11-23T08:30:00+01:00",
+      "media": [
+        "media/2026-11-23/gta6-story.jpg"
+      ]
+    },
+    {
+      "id": "2026-11-23-story-todo-1130",
+      "type": "story",
+      "at": "2026-11-23T11:30:00+01:00",
+      "media": [
+        "media/2026-11-23/todo-story.jpg"
+      ]
+    },
+    {
+      "id": "2026-11-23-feed-gta6",
+      "type": "carousel",
+      "at": "2026-11-23T12:30:00+01:00",
+      "media": [
+        "media/2026-11-23/gta6-1.jpg",
+        "media/2026-11-23/gta6-2.jpg",
+        "media/2026-11-23/gta6-3.jpg"
+      ],
+      "caption": "🇲🇪 Grand Theft Auto VI je prvog dana prodaje zaradio 3,79 milijardi dolara, objavio je Rockstar Games. Prije izlaska prodato je 32,5 miliona primjeraka, a igra ima ocjenu 99 na Metacriticu.\n\n🇬🇧 Grand Theft Auto VI made $3.79 billion in day-one retail sales, Rockstar Games says. It sold 32.5 million copies before launch and holds a 99 on Metacritic.\n\nIzvor / Source: Take-Two Interactive\n\n#GTA6 #gaming #tehnologija #tech #go24"
+    },
+    {
+      "id": "2026-11-23-story-gta6-1530",
+      "type": "story",
+      "at": "2026-11-23T15:30:00+01:00",
+      "media": [
+        "media/2026-11-23/gta6-story.jpg"
+      ]
+    },
+    {
+      "id": "2026-11-23-story-todo-1930",
+      "type": "story",
+      "at": "2026-11-23T19:30:00+01:00",
+      "media": [
+        "media/2026-11-23/todo-story.jpg"
+      ]
+    }
+  ]
+}

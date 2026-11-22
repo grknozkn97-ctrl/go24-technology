@@ -1,6 +1,6 @@
 {
   "timezone": "Europe/Podgorica",
-  "api_version": "v26.0",
+  "api_version": "v25.0",
   "require_approval": true,
   "feed_times": [
     "12:30"

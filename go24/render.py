@@ -135,7 +135,7 @@ def vgradient(w, h, stops):
     return mask.resize((w, h))
 
 
-def photo_canvas(item, w, h, photo_h, focus=(0.5, 0.45), dim=0.0) -> Image.Image:
+def photo_canvas(item, w, h, photo_h, focus=(0.5, 0.45), dim=0.0, header_y=60) -> Image.Image:
     """Dark canvas with the photo at the top fading into the background."""
     canvas = Image.new("RGB", (w, h), BG)
     src = item.get("_image")
@@ -150,7 +150,8 @@ def photo_canvas(item, w, h, photo_h, focus=(0.5, 0.45), dim=0.0) -> Image.Image
         ph = Image.blend(ph, Image.new("RGB", ph.size, BG), dim)
     # darken top for logo legibility, fade bottom into background
     shade = Image.new("RGB", (w, photo_h), BG)
-    top = vgradient(w, photo_h, [(0, 175), (min(0.9, 230 / photo_h), 0), (1, 0)])
+    hold, end = (header_y + 90) / photo_h, (header_y + 260) / photo_h
+    top = vgradient(w, photo_h, [(0, 200), (min(0.8, hold), 165), (min(0.9, end), 0), (1, 0)])
     ph = Image.composite(shade, ph, top)
     canvas.paste(ph, (0, 0))
     fade = vgradient(w, photo_h, [(0, 0), (0.45, 0), (1, 255)])
@@ -281,7 +282,7 @@ def render_detail(item, lang, page, out: Path):
 def render_story(item, out: Path):
     W, H = W_STORY, H_STORY
     has_photo = item.get("_image") is not None
-    img = photo_canvas(item, W, H, 1240, item.get("image", {}).get("focus", (0.5, 0.4)))
+    img = photo_canvas(item, W, H, 1240, item.get("image", {}).get("focus", (0.5, 0.4)), header_y=230)
     d = ImageDraw.Draw(img)
     header(img, item, W, y=230, scale=1.15)
 

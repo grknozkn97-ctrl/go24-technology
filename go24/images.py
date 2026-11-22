@@ -51,6 +51,39 @@ def _download(url: str) -> Image.Image:
     return img
 
 
+def trim_borders(img: Image.Image, tol: float = 10.0) -> Image.Image:
+    """Removes flat letterbox/pillarbox bands (common on og:images)."""
+    g = img.convert("L")
+    w, h = g.size
+    px = g.load()
+
+    def flat_row(y):
+        vals = [px[x, y] for x in range(0, w, max(1, w // 200))]
+        m = sum(vals) / len(vals)
+        return max(abs(v - m) for v in vals) < tol
+
+    def flat_col(x):
+        vals = [px[x, y] for y in range(0, h, max(1, h // 200))]
+        m = sum(vals) / len(vals)
+        return max(abs(v - m) for v in vals) < tol
+
+    top = 0
+    while top < h // 4 and flat_row(top):
+        top += 1
+    bot = h - 1
+    while bot > h * 3 // 4 and flat_row(bot):
+        bot -= 1
+    left = 0
+    while left < w // 4 and flat_col(left):
+        left += 1
+    right = w - 1
+    while right > w * 3 // 4 and flat_col(right):
+        right -= 1
+    if (top, left, bot, right) != (0, 0, h - 1, w - 1):
+        img = img.crop((left, top, right + 1, bot + 1))
+    return img
+
+
 def attach_image(item: dict, save_dir: Path | None = None) -> None:
     spec = item.get("image") or {}
     item["_image"] = None
@@ -67,7 +100,7 @@ def attach_image(item: dict, save_dir: Path | None = None) -> None:
             img = _download(src)
         else:
             return
-        img = img.convert("RGB")
+        img = trim_borders(img.convert("RGB"))
         if img.width < MIN_W or img.height < MIN_H:
             raise ValueError(f"image too small ({img.width}x{img.height})")
         if max(img.size) > 2000:

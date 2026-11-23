@@ -1,0 +1,36 @@
+{
+ "id": "welcome",
+ "date": "2026-11-23",
+ "category": {
+  "me": "Dobrodošli",
+  "en": "Welcome"
+ },
+ "title_me": "Tehnološke vijesti svaki dan, na crnogorskom i engleskom",
+ "title_en": "Daily tech news in Montenegrin and English",
+ "points_me": [
+  "Najvažnije tehnološke vijesti dana, kratko i jasno.",
+  "Vještačka inteligencija, telefoni, aplikacije, gaming i sigurnost.",
+  "Vijesti iz regiona i Crne Gore.",
+  "Svaka vijest je provjerena iz najmanje dva izvora."
+ ],
+ "points_en": [
+  "The day's most important tech news, short and clear.",
+  "AI, phones, apps, gaming and security.",
+  "News from the region and Montenegro.",
+  "Every story is checked against at least two sources."
+ ],
+ "story_me": "Zapratite nas da ništa ne propustite.",
+ "story_en": "Follow us so you don't miss a thing.",
+ "source": "go24 technology",
+ "footer_text": "Pratite nas / Follow us  ·  @go24technology",
+ "detail_label": {
+  "me": "Šta vas čeka",
+  "en": "What to expect"
+ },
+ "image": {
+  "focus": [
+   0.5,
+   0.5
+  ]
+ }
+}

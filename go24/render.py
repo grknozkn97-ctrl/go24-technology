@@ -53,7 +53,9 @@ def tracked_w(draw, text, f, tracking):
 
 def _keep_together(text):
     # "30. juna", "5 G" style pairs never split across lines
-    return re.sub(r"(\b\d+\.?)\s+(?=\S)", "\\1\u00a0", text.strip())
+    text = re.sub(r"(\b\d+\.?)\s+(?=\S)", "\\1\u00a0", text.strip())
+    # one-letter words (i, u, a, s, k, o...) never end a line - Montenegrin typography
+    return re.sub(r"(?:(?<=\s)|^)([iuaskoIUASKOv])\s+(?=\S)", "\\1\u00a0", text)
 
 
 def _wrap_greedy(draw, text, f, max_w):
@@ -199,6 +201,8 @@ def kicker(img, x, y, label, scale=1.0):
 
 
 def credit_line(item):
+    if item.get("footer_text"):
+        return item["footer_text"]
     parts = []
     img = item.get("image") or {}
     if item.get("_image") is not None and img.get("credit"):
@@ -254,7 +258,7 @@ def render_detail(item, lang, page, out: Path):
     d = ImageDraw.Draw(img)
     header(img, item, W)
 
-    label = "Šta se desilo" if lang == "me" else "What happened"
+    label = (item.get("detail_label") or {"me": "Šta se desilo", "en": "What happened"})[lang]
     max_w = W - 2 * M
     y = 300
     y = kicker(img, M, y, label) + 30

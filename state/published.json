@@ -1,1 +1,39 @@
-{}
+{
+  "2026-11-23-story-gta6-0830": {
+    "status": "skipped_late",
+    "note": "API token not set on this day",
+    "at": "2026-11-23T08:30:00+01:00",
+    "checked": "2026-11-23T21:00:43.123416+00:00"
+  },
+  "2026-11-23-story-todo-1130": {
+    "status": "skipped_late",
+    "note": "API token not set on this day",
+    "at": "2026-11-23T11:30:00+01:00",
+    "checked": "2026-11-23T21:00:43.123416+00:00"
+  },
+  "2026-11-23-feed-gta6": {
+    "status": "published",
+    "manual": true,
+    "note": "posted by hand via instagram.com before the API token existed",
+    "published": "2026-11-23T21:00:43.123416+00:00",
+    "at": "2026-11-23T12:30:00+01:00"
+  },
+  "2026-11-23-story-gta6-1530": {
+    "status": "skipped_late",
+    "note": "API token not set on this day",
+    "at": "2026-11-23T15:30:00+01:00",
+    "checked": "2026-11-23T21:00:43.123416+00:00"
+  },
+  "2026-11-23-story-todo-1930": {
+    "status": "skipped_late",
+    "note": "API token not set on this day",
+    "at": "2026-11-23T19:30:00+01:00",
+    "checked": "2026-11-23T21:00:43.123416+00:00"
+  },
+  "2026-11-23-feed-welcome": {
+    "status": "published",
+    "manual": true,
+    "note": "welcome post, posted by hand via instagram.com",
+    "published": "2026-11-23T21:00:43.123416+00:00"
+  }
+}
